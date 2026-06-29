@@ -103,7 +103,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
+    padding: 32px 0 24px;
 }
 
 .logo {
@@ -547,28 +547,28 @@ nav {
 }
 
 .glass-card, .feature-item {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 36px;
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
     transition: 
         transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
         border-color 0.4s ease, 
         box-shadow 0.4s ease;
     box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        0 10px 40px -10px rgba(0, 0, 0, 0.5),
+        inset 0 1.5px 1.5px rgba(255, 255, 255, 0.1);
 }
 
 .glass-card:hover, .feature-item:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(142, 45, 226, 0.15),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(142, 45, 226, 0.2),
+        inset 0 1.5px 1.5px rgba(255, 255, 255, 0.15);
 }
 
 .glass-card h3, .feature-item h3 {
@@ -829,7 +829,47 @@ footer {
 }
 
 
-    </style>
+    
+/* Simulated iOS Status Bar */
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+}
+.status-bar .status-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Ambient Bottom Glow */
+.bg-glow-bottom {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(142, 45, 226, 0.08) 0%, rgba(74, 0, 224, 0.02) 50%, rgba(0,0,0,0) 70%);
+    opacity: 0.8;
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+}
+body {
+    position: relative;
+}
+</style>
 </head>
 <body>
     <div class="bg-glow"></div>
@@ -893,5 +933,6 @@ footer {
             </div>
         </footer>
     </div>
+    <div class="bg-glow-bottom"></div>
 </body>
 </html>
