@@ -880,6 +880,68 @@ footer {
 body {
     position: relative;
 }
+
+/* Newsletter Form Styling */
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+    width: 100%;
+}
+.newsletter-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+.newsletter-input:focus {
+    border-color: rgba(142, 45, 226, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+.newsletter-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.newsletter-btn:hover {
+    background: #e4e4e7;
+    transform: translateY(-1px);
+}
+.newsletter-btn:active {
+    transform: translateY(0);
+}
+.newsletter-status {
+    font-size: 12px;
+    margin-top: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+.newsletter-status.success {
+    color: #10b981;
+    opacity: 1;
+}
+.newsletter-status.error {
+    color: #ef4444;
+    opacity: 1;
+}
+@media (max-width: 480px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
 </style>
 </head>
 <body>
@@ -923,14 +985,20 @@ body {
                     </div>
                 </a>
 
-                <!-- Placeholder for the next App -->
-                <div class="glass-card" style="opacity: 0.5; text-align: left;">
-                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.4); filter: none;">
+                <!-- Lead Generation: Newsletter Form for the next App -->
+                <div class="glass-card" style="text-align: left; border-color: rgba(142, 45, 226, 0.15);">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff007f; filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.4));">
                         <path d="M4.5 16.5c-1.5 1.5-2.5 3.5-2.5 3.5s2-1 3.5-2.5M12 2C7.5 2 4 5.5 4 10c0 2 1 3.5 1 3.5L9 9l4 4 1 1s1.5 1 3.5 1c4.5 0 8-3.5 8-8 0-2.5-1.5-4-3.5-4.5z" />
                         <path d="M9 15l-3 3M15 9l-3 3" />
                     </svg>
                     <h3>Next Project</h3>
-                    <p>Coming soon to the App Store. We are always working on something new to improve your digital life.</p>
+                    <p>We are building something magical. Enter your email below to get early beta access and exclusive launch updates.</p>
+                    
+                    <form action="#" method="POST" class="newsletter-form" id="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email..." required class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Notify Me</button>
+                    </form>
+                    <div id="newsletter-status" class="newsletter-status"></div>
                 </div>
             </div>
         </main>
@@ -943,5 +1011,33 @@ body {
         </footer>
     </div>
     <div class="bg-glow-bottom"></div>
+
+    <!-- Newsletter Form Logic -->
+    <script>
+        const form = document.getElementById('newsletter-form');
+        const status = document.getElementById('newsletter-status');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = form.querySelector('input[type="email"]');
+                const email = emailInput.value;
+                
+                // Store email locally (simulates saving to a database)
+                let emails = JSON.parse(localStorage.getItem('tevic_newsletter_emails') || '[]');
+                emails.push({email: email, timestamp: new Date().toISOString()});
+                localStorage.setItem('tevic_newsletter_emails', JSON.stringify(emails));
+                
+                status.textContent = "Awesome! You're on the list. 🚀";
+                status.className = "newsletter-status success";
+                form.reset();
+                
+                // Hide status after 5s
+                setTimeout(() => {
+                    status.style.opacity = 0;
+                }, 5000);
+            });
+        }
+    </script>
+
 </body>
 </html>
