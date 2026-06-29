@@ -68,16 +68,21 @@
 }
 
 html, body {
-    overflow-x: hidden;
-    width: 100%;
     margin: 0;
     padding: 0;
+}
+.page-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     background-image: 
         radial-gradient(at 0% 0%, rgba(142, 45, 226, 0.08) 0px, transparent 50%),
@@ -1051,6 +1056,7 @@ body {
     </style>
 </head>
 <body>
+<div class="page-wrapper">
     <div class="bg-glow"></div>
     
     <div class="container">
@@ -1392,5 +1398,6 @@ body {
         <span>Get SubSlayer</span>
     </a>
 
+</div>
 </body>
 </html>
