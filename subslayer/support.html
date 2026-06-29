@@ -5,29 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - SubSlayer</title>
     
-    <!-- SPEED OPTIMIZATION (LCP) & FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="icon" type="image/png" href="assets/app-icon.png">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
     <link rel="canonical" href="https://teviclabs.com/subslayer/support.html">
     <meta name="apple-itunes-app" content="app-id=1234567890"> 
 
-    <link rel="stylesheet" href="../styles.css">
-    
     <style>
+        body {
+            background-color: #09090b;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        nav {
+            padding: 32px 0 20px;
+        }
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .legal-content {
+            padding: 20px 0 60px;
+        }
+        .legal-content h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .legal-content h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 40px 0 16px;
+            letter-spacing: -0.5px;
+        }
+        .legal-content p, .legal-content ul {
+            color: #a1a1aa;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        .legal-content ul {
+            padding-left: 20px;
+        }
+        .legal-content li {
+            margin-bottom: 12px;
+        }
         .contact-btn {
-            display: inline-block; 
-            margin-top: 16px; 
-            padding: 12px 24px; 
-            background: rgba(57, 255, 20, 0.1); 
-            border: 1px solid rgba(57, 255, 20, 0.3); 
-            border-radius: 12px; 
-            color: #39FF14; 
-            text-decoration: none; 
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 24px;
+            background: #022c22;
+            border: 1px solid #065f46;
+            border-radius: 12px;
+            color: #39FF14;
+            text-decoration: none;
             font-weight: 600;
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        .contact-btn:hover {
+            background: #047857;
+            border-color: #39FF14;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 32px 0;
+            margin-top: 60px;
+            color: #a1a1aa;
+            font-size: 13px;
         }
     </style>
 </head>
