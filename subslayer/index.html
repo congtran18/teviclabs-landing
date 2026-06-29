@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SPEED OPTIMIZATION (LCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,24 +90,88 @@
                 <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Save hundreds of dollars. Zero Ads. Zero Tracking.</p>
             </div>
 
-            <!-- APP IMAGE MOCKUP -->
+            <!-- Interactive iPhone Mockup (SubSlayer Neon Dashboard) -->
             <div class="mockup-container">
-                <img src="assets/screenshot.png" alt="SubSlayer App Interface" class="mockup" onerror="this.src='https://via.placeholder.com/300x600/1A1A1A/39FF14?text=Place+screenshot.png+here'">
+                <div class="iphone-device" style="border-color: #1f2937; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(57, 255, 20, 0.15);">
+                    <div class="dynamic-island"></div>
+                    <div class="screen" style="background: #070708;">
+                        <div class="subslayer-screen">
+                            <div class="sub-header-sim">
+                                <h3>Active Subs</h3>
+                                <span class="mono-font">$42.97/mo</span>
+                            </div>
+                            <div class="sub-list-sim">
+                                <!-- Netflix -->
+                                <div class="sub-item-sim slayed-target">
+                                    <div class="sub-logo-name">
+                                        <div class="sub-logo-sim" style="background: #e50914; color: #fff;">N</div>
+                                        <div class="sub-info-text">
+                                            <h5>Netflix Premium</h5>
+                                            <p>Renews in 3 days</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-price-sim">
+                                        <span>$15.99</span>
+                                        <p>/mo</p>
+                                    </div>
+                                    <div class="slay-line"></div>
+                                </div>
+                                <!-- Spotify -->
+                                <div class="sub-item-sim">
+                                    <div class="sub-logo-name">
+                                        <div class="sub-logo-sim" style="background: #1db954; color: #000;">S</div>
+                                        <div class="sub-info-text">
+                                            <h5>Spotify Duo</h5>
+                                            <p>Renews in 12 days</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-price-sim">
+                                        <span>$14.99</span>
+                                        <p>/mo</p>
+                                    </div>
+                                </div>
+                                <!-- ChatGPT -->
+                                <div class="sub-item-sim">
+                                    <div class="sub-logo-name">
+                                        <div class="sub-logo-sim" style="background: #000; color: #fff;">C</div>
+                                        <div class="sub-info-text">
+                                            <h5>ChatGPT Plus</h5>
+                                            <p>Renews in 18 days</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-price-sim">
+                                        <span>$20.00</span>
+                                        <p>/mo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <section class="features">
                 <div class="feature-item">
-                    <span class="icon" style="color: var(--primary-color);">📸</span>
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                    </svg>
                     <h3>Scan-to-Slay AI</h3>
                     <p>Simply scan a receipt or email. Our on-device AI automatically extracts the service name, price, and billing cycle instantly.</p>
                 </div>
-                <div class="feature-item">
-                    <span class="icon" style="color: var(--alert-color);">⚔️</span>
+                <div class="feature-item" style="border-color: rgba(255, 49, 49, 0.15);">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3131; filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.4));">
+                        <path d="M14.5 17.5L3 6M17.5 14.5L6 3M13 13l7 7M19 17l2 2-2 2-2-2zM5 5L3 3" />
+                        <path d="M18 6L6 18" />
+                    </svg>
                     <h3>One-Tap Slay Widget</h3>
                     <p>Cancel a subscription? Mark it as "Slayed" directly from your iOS Home Screen widget without even opening the app.</p>
                 </div>
                 <div class="feature-item">
-                    <span class="icon" style="color: var(--primary-color);">🔒</span>
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
+                        <path d="M18 10a5 5 0 0 0-9.5-2.5A6 6 0 0 0 2 13a6 6 0 0 0 6 6h10a5 5 0 0 0 0-10z" />
+                        <rect x="10" y="12" width="4" height="4" rx="1" />
+                    </svg>
                     <h3>Indestructible Privacy</h3>
                     <p>SubSlayer is built with 100% Native Apple Frameworks. No third-party SDKs, no external servers. Your financial data lives entirely in your personal iCloud.</p>
                 </div>

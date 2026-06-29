@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SPEED OPTIMIZATION (LCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,28 +68,72 @@
                 <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">100% Offline Privacy Guarantee.</p>
             </div>
 
-            <!-- APP IMAGE MOCKUP -->
+            <!-- Interactive iPhone Mockup (Pure CSS & HTML) -->
             <div class="mockup-container">
-                <!-- Place your own app screenshot here at assets/screenshot.png -->
-                <img src="assets/screenshot.png" alt="PhotoSwipe UI" class="mockup" style="background-color: #1c1c1e; display: block; min-height: 600px;">
+                <div class="iphone-device">
+                    <div class="dynamic-island"></div>
+                    <div class="screen">
+                        <div class="card-stack">
+                            <!-- Card 1 -->
+                            <div class="swipe-card card-1">
+                                <div class="card-img-sim" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=300&auto=format&fit=crop');">
+                                    <div class="card-badge trash">Trash</div>
+                                </div>
+                                <div class="card-info-sim">
+                                    <h4>Blurry Landscape</h4>
+                                    <p>May 12, 2026 • 8.4 MB • Blurry</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="swipe-card card-2">
+                                <div class="card-img-sim" style="background-image: url('https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=300&auto=format&fit=crop');">
+                                    <div class="card-badge keep">Keep</div>
+                                </div>
+                                <div class="card-info-sim">
+                                    <h4>Book Cover Note</h4>
+                                    <p>Yesterday • 1.2 MB • Clear</p>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="swipe-card card-3">
+                                <div class="card-img-sim" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=300&auto=format&fit=crop');"></div>
+                                <div class="card-info-sim">
+                                    <h4>Duplicate Photo</h4>
+                                    <p>June 2, 2026 • 4.1 MB • Duplicate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
         <section class="features">
             <div class="glass-card">
-                <span class="icon">👆</span>
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));">
+                    <rect x="3" y="7" width="11" height="14" rx="2" ry="2" transform="rotate(-8 3 7)" style="opacity: 0.5;" />
+                    <rect x="7" y="3" width="11" height="14" rx="2" ry="2" />
+                    <path d="M16 11l3 3-3 3M19 14H11" />
+                </svg>
                 <h3>Swipe like Tinder</h3>
                 <p>Review your photos playfully. Queued deletions are kept safe in a review bin until you're absolutely ready to batch delete them.</p>
             </div>
             
             <div class="glass-card">
-                <span class="icon">🛡️</span>
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3b82f6; filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <circle cx="12" cy="11" r="3" />
+                    <path d="M12 14v4" />
+                </svg>
                 <h3>Secret FaceID Vault</h3>
                 <p>Hide your most private photos in an encrypted vault secured by FaceID. No one else can access them.</p>
             </div>
             
             <div class="glass-card">
-                <span class="icon">🔒</span>
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+                </svg>
                 <h3>100% Offline Privacy</h3>
                 <p>Your photos never leave your device. All machine learning and processing happens locally on your iPhone's Neural Engine.</p>
             </div>
