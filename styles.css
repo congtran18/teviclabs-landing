@@ -1,0 +1,234 @@
+/* /AppLandingPages/styles.css */
+/* Fonts are now preloaded in HTML for max speed */
+
+:root {
+    --bg-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --purple-start: #8e2de2;
+    --purple-end: #4a00e0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Glow Effect */
+.bg-glow {
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--purple-start) 0%, rgba(0,0,0,0) 70%);
+    opacity: 0.3;
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 0 60px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* App Store Badge CTA */
+.app-store-badge {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+}
+
+.app-store-badge:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+.app-store-badge img {
+    height: 56px;
+}
+
+/* App Mockup */
+.mockup-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    perspective: 1000px;
+}
+
+.mockup {
+    width: 320px;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 24px 80px rgba(142, 45, 226, 0.4);
+    border: 8px solid #1a1a1a;
+    transform: rotateX(10deg) translateY(-20px);
+    transition: transform 0.5s ease;
+}
+
+.mockup:hover {
+    transform: rotateX(0deg) translateY(0);
+}
+
+/* Features Grid (Glassmorphism) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 100px 0;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.glass-card p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 40px 0;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+/* Legal Pages Styling */
+.legal-content {
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.legal-content h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.legal-content h2 {
+    font-size: 24px;
+    margin: 40px 0 16px;
+    color: #fff;
+}
+
+.legal-content p, .legal-content ul {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.legal-content ul {
+    padding-left: 24px;
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .hero p { font-size: 18px; }
+    .mockup { width: 280px; }
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links a { margin: 0 12px; }
+}

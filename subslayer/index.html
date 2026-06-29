@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SPEED OPTIMIZATION (LCP) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/app-icon.png">
+    <link rel="apple-touch-icon" href="assets/app-icon.png">
+    <link rel="canonical" href="https://teviclabs.com/subslayer/index.html">
+    
+    <!-- SEO & GLOBAL REACH -->
+    <title>SubSlayer - Track & Cancel Subscriptions</title>
+    <meta name="description" content="Stop bleeding money. Slay your unwanted subscriptions with one tap. Offline, private, and insanely fast tracking for your recurring expenses.">
+    
+    <!-- APPLE SMART APP BANNER -->
+    <meta name="apple-itunes-app" content="app-id=1234567890"> 
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="SubSlayer - The Ultimate Subscription Tracker">
+    <meta property="og:description" content="Take control of your finances. 100% offline. Zero ads.">
+    <meta property="og:image" content="https://teviclabs.com/subslayer/assets/og-banner.jpg">
+    <meta property="og:url" content="https://teviclabs.com/subslayer/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SubSlayer",
+      "operatingSystem": "iOS",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- SUBSLAYER NEON AESTHETIC OVERRIDES -->
+    <style>
+        :root {
+            --primary-color: #39FF14; /* Neon Green */
+            --alert-color: #FF3131; /* Neon Red */
+            --bg-color: #000000;
+        }
+        .hero h1 {
+            background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .mono-font {
+            font-family: 'Space Mono', monospace;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+        }
+        .bg-glow {
+            background: radial-gradient(circle at 50% -20%, rgba(57, 255, 20, 0.15) 0%, transparent 60%);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    
+    <div class="container">
+        <nav>
+            <a href="../index.html" class="logo">TEVIC</a>
+        </nav>
+
+        <main class="hero">
+            <h1>Stop bleeding money.<br>Slay subscriptions.</h1>
+            <p>Track your recurring expenses, scan receipts to auto-add, and manage split costs. 100% offline with zero 3rd-party trackers.</p>
+            
+            <!-- Mobile-Optimized CTA -->
+            <a href="https://apps.apple.com/app/id1234567890" class="app-store-badge">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1600000000" alt="Download on the App Store">
+            </a>
+            
+            <!-- ETHICAL SOCIAL PROOF -->
+            <div style="margin-top: 12px; margin-bottom: 32px;">
+                <span style="font-size: 14px; letter-spacing: 2px;">⭐⭐⭐⭐⭐</span>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Save hundreds of dollars. Zero Ads. Zero Tracking.</p>
+            </div>
+
+            <!-- APP IMAGE MOCKUP -->
+            <div class="mockup-container">
+                <img src="assets/screenshot.png" alt="SubSlayer App Interface" class="mockup" onerror="this.src='https://via.placeholder.com/300x600/1A1A1A/39FF14?text=Place+screenshot.png+here'">
+            </div>
+            
+            <section class="features">
+                <div class="feature-item">
+                    <span class="icon" style="color: var(--primary-color);">📸</span>
+                    <h3>Scan-to-Slay AI</h3>
+                    <p>Simply scan a receipt or email. Our on-device AI automatically extracts the service name, price, and billing cycle instantly.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon" style="color: var(--alert-color);">⚔️</span>
+                    <h3>One-Tap Slay Widget</h3>
+                    <p>Cancel a subscription? Mark it as "Slayed" directly from your iOS Home Screen widget without even opening the app.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon" style="color: var(--primary-color);">🔒</span>
+                    <h3>Indestructible Privacy</h3>
+                    <p>SubSlayer is built with 100% Native Apple Frameworks. No third-party SDKs, no external servers. Your financial data lives entirely in your personal iCloud.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 TEVIC. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="support.html">Support</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
