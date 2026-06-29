@@ -9,7 +9,7 @@
    
    <!-- PhotoSwipe -->
    <url>
-      <loc>https://teviclabs.com/photoswipe/index.html</loc>
+      <loc>https://teviclabs.com/photoswipe/</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
@@ -31,7 +31,7 @@
 
    <!-- SubSlayer -->
    <url>
-      <loc>https://teviclabs.com/subslayer/index.html</loc>
+      <loc>https://teviclabs.com/subslayer/</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
