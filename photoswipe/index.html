@@ -109,7 +109,7 @@
         </main>
 
         <section class="features">
-            <div class="glass-card">
+            <div class="glass-card" id="card-swipe" style="cursor: pointer;">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));">
                     <rect x="3" y="7" width="11" height="14" rx="2" ry="2" transform="rotate(-8 3 7)" style="opacity: 0.5;" />
                     <rect x="7" y="3" width="11" height="14" rx="2" ry="2" />
@@ -119,7 +119,7 @@
                 <p>Review your photos playfully. Queued deletions are kept safe in a review bin until you're absolutely ready to batch delete them.</p>
             </div>
             
-            <div class="glass-card">
+            <div class="glass-card" id="card-vault" style="cursor: pointer;">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3b82f6; filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     <circle cx="12" cy="11" r="3" />
@@ -129,7 +129,7 @@
                 <p>Hide your most private photos in an encrypted vault secured by FaceID. No one else can access them.</p>
             </div>
             
-            <div class="glass-card">
+            <div class="glass-card" id="card-privacy" style="cursor: pointer;">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));">
                     <rect x="4" y="4" width="16" height="16" rx="2" />
                     <path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
@@ -142,18 +142,24 @@
         <!-- FAQ Section -->
         <section class="faq" style="margin: 60px 0 100px; text-align: left; width: 100%;">
             <h2 style="font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Frequently Asked Questions</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px; max-width: 680px; margin: 0 auto;">
-                <div class="glass-card" style="padding: 24px;">
-                    <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Will PhotoSwipe delete my photos permanently?</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">No. PhotoSwipe staging deletes go to a Virtual Review Bin first. When you confirm deletion, iOS will request permission exactly once. Deleted items are sent to the system "Recently Deleted" album, where they can be recovered for up to 30 days.</p>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">Will PhotoSwipe delete my photos permanently?</button>
+                    <div class="faq-answer">
+                        <p>No. PhotoSwipe staging deletes go to a Virtual Review Bin first. When you confirm deletion, iOS will request permission exactly once. Deleted items are sent to the system "Recently Deleted" album, where they can be recovered for up to 30 days.</p>
+                    </div>
                 </div>
-                <div class="glass-card" style="padding: 24px;">
-                    <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Is my privacy secure?</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">100%. All duplicate calculations, image scanning, and OCR features run completely offline on your iPhone's Apple Neural Engine. Your photos never leave your device, and no analytics or personal data is collected on external servers.</p>
+                <div class="faq-item">
+                    <button class="faq-question">Is my privacy secure?</button>
+                    <div class="faq-answer">
+                        <p>100%. All duplicate calculations, image scanning, and OCR features run completely offline on your iPhone's Apple Neural Engine. Your photos never leave your device, and no analytics or personal data is collected on external servers.</p>
+                    </div>
                 </div>
-                <div class="glass-card" style="padding: 24px;">
-                    <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">How does the Smart Energy system work?</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">Free users get daily Smart Energy to use the automated Review Bin. If energy is depleted, you can still delete photos manually without limitations (though iOS will ask for confirmation on every single photo), or watch a quick ad to top up.</p>
+                <div class="faq-item">
+                    <button class="faq-question">How does the Smart Energy system work?</button>
+                    <div class="faq-answer">
+                        <p>Free users get daily Smart Energy to use the automated Review Bin. If energy is depleted, you can still delete photos manually without limitations (though iOS will ask for confirmation on every single photo), or watch a quick ad to top up.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,5 +173,85 @@
             </div>
         </footer>
     </div>
+
+    <!-- Premium Modal Overlay -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-content">
+            <div class="modal-icon" id="modal-icon-container"></div>
+            <h3 id="modal-title">Feature Details</h3>
+            <p id="modal-description">More details about this premium feature.</p>
+            <button class="modal-close-btn" id="modal-close">Close</button>
+        </div>
+    </div>
+
+    <!-- Dynamic Interactions Script -->
+    <script>
+        // Smooth scroll for Swipe card
+        document.getElementById('card-swipe').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Modal Content Data
+        const modalData = {
+            vault: {
+                title: "Secret FaceID Vault",
+                description: "PhotoSwipe creates a secure, encrypted storage vault hidden inside the app. Protected by FaceID or passcode, it bypasses the standard iOS photos storage entirely, meaning your sensitive images won't appear in local widgets, photo search, or standard sharing views. Zero exposure.",
+                iconColor: "#3b82f6",
+                svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3b82f6; width:100%; height:100%;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/><path d="M12 14v4"/></svg>`
+            },
+            privacy: {
+                title: "100% Offline Privacy",
+                description: "We believe privacy is indestructible. PhotoSwipe performs duplicate grouping, text recognition (OCR) on screenshots, and image analysis locally using CoreML on the Apple Neural Engine. Your photos never leave your device, no network connection is needed, and no telemetry is gathered.",
+                iconColor: "#10b981",
+                svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981; width:100%; height:100%;"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>`
+            }
+        };
+
+        const modal = document.getElementById('detail-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-description');
+        const modalIcon = document.getElementById('modal-icon-container');
+
+        const openModal = (type) => {
+            const data = modalData[type];
+            if (!data) return;
+            modalTitle.innerText = data.title;
+            modalDesc.innerText = data.description;
+            modalIcon.innerHTML = data.svg;
+            modal.classList.add('active');
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+        };
+
+        document.getElementById('card-vault').addEventListener('click', () => openModal('vault'));
+        document.getElementById('card-privacy').addEventListener('click', () => openModal('privacy'));
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // FAQ Accordion Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close other open accordion items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

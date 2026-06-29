@@ -151,7 +151,7 @@
             </div>
             
             <section class="features">
-                <div class="feature-item">
+                <div class="feature-item" id="card-scan" style="cursor: pointer;">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                         <circle cx="12" cy="13" r="4" />
@@ -159,7 +159,7 @@
                     <h3>Scan-to-Slay AI</h3>
                     <p>Simply scan a receipt or email. Our on-device AI automatically extracts the service name, price, and billing cycle instantly.</p>
                 </div>
-                <div class="feature-item" style="border-color: rgba(255, 49, 49, 0.15);">
+                <div class="feature-item" id="card-widget" style="cursor: pointer; border-color: rgba(255, 49, 49, 0.15);">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3131; filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.4));">
                         <path d="M14.5 17.5L3 6M17.5 14.5L6 3M13 13l7 7M19 17l2 2-2 2-2-2zM5 5L3 3" />
                         <path d="M18 6L6 18" />
@@ -167,7 +167,7 @@
                     <h3>One-Tap Slay Widget</h3>
                     <p>Cancel a subscription? Mark it as "Slayed" directly from your iOS Home Screen widget without even opening the app.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item" id="card-privacy" style="cursor: pointer;">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
                         <path d="M18 10a5 5 0 0 0-9.5-2.5A6 6 0 0 0 2 13a6 6 0 0 0 6 6h10a5 5 0 0 0 0-10z" />
                         <rect x="10" y="12" width="4" height="4" rx="1" />
@@ -187,5 +187,63 @@
             </div>
         </footer>
     </div>
+
+    <!-- Premium Modal Overlay -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-content">
+            <div class="modal-icon" id="modal-icon-container"></div>
+            <h3 id="modal-title" style="color: #fff;">Feature Details</h3>
+            <p id="modal-description">More details about this premium feature.</p>
+            <button class="modal-close-btn" id="modal-close" style="background: #39FF14; color: #000;">Close</button>
+        </div>
+    </div>
+
+    <!-- Dynamic Interactions Script -->
+    <script>
+        // Modal Content Data
+        const modalData = {
+            scan: {
+                title: "Scan-to-Slay AI",
+                description: "SubSlayer integrates a state-of-the-art on-device layout recognition model (OCR) powered by Apple Neural Engine. When you upload or scan a receipt or invoice screenshot, it dynamically detects the vendor name, matches it against our subscription database, extracts the price and billing cycle, and populates your dashboard automatically. 100% offline, zero server delay.",
+                svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; width:100%; height:100%;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`
+            },
+            widget: {
+                title: "One-Tap Slay Widget",
+                description: "Directly cancel or check off your slayed subscriptions from your iOS Home Screen. SubSlayer's highly responsive widgets let you track billing renewal alerts and mark expenses as cancelled with one tap, saving you the friction of opening the app.",
+                svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3131; width:100%; height:100%;"><path d="M14.5 17.5L3 6M17.5 14.5L6 3M13 13l7 7M19 17l2 2-2 2-2-2zM5 5L3 3"/><path d="M18 6L6 18"/></svg>`
+            },
+            privacy: {
+                title: "Indestructible Privacy",
+                description: "We believe financial privacy should be bulletproof. SubSlayer has no server backends, no tracking analytics, and no third-party libraries. All data resides securely in your private iCloud Container, synced across your Apple devices with end-to-end Apple encryption.",
+                svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; width:100%; height:100%;"><path d="M18 10a5 5 0 0 0-9.5-2.5A6 6 0 0 0 2 13a6 6 0 0 0 6 6h10a5 5 0 0 0 0-10z"/><rect x="10" y="12" width="4" height="4" rx="1"/></svg>`
+            }
+        };
+
+        const modal = document.getElementById('detail-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-description');
+        const modalIcon = document.getElementById('modal-icon-container');
+
+        const openModal = (type) => {
+            const data = modalData[type];
+            if (!data) return;
+            modalTitle.innerText = data.title;
+            modalDesc.innerText = data.description;
+            modalIcon.innerHTML = data.svg;
+            modal.classList.add('active');
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+        };
+
+        document.getElementById('card-scan').addEventListener('click', () => openModal('scan'));
+        document.getElementById('card-widget').addEventListener('click', () => openModal('widget'));
+        document.getElementById('card-privacy').addEventListener('click', () => openModal('privacy'));
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    </script>
 </body>
 </html>
