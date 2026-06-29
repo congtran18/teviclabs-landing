@@ -1363,16 +1363,16 @@ body {
 
 
         // Floating Mobile CTA scroll trigger
-        const floatingCta = document.getElementById('floating-cta');
-        if (floatingCta) {
-            window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', () => {
+            const floatingCta = document.getElementById('floating-cta');
+            if (floatingCta) {
                 if (window.scrollY > 450) {
                     floatingCta.classList.add('visible');
                 } else {
                     floatingCta.classList.remove('visible');
                 }
-            });
-        }
+            }
+        });
         
         // Scroll Reveal Intersection Observer
         const revealObserver = new IntersectionObserver((entries) => {
