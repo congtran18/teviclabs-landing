@@ -568,6 +568,9 @@ nav {
     box-shadow: 
         0 10px 40px -10px rgba(0, 0, 0, 0.5),
         inset 0 1.5px 1.5px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .glass-card:hover, .feature-item:hover {
@@ -877,6 +880,90 @@ footer {
 body {
     position: relative;
 }
+
+/* Step Cards (How It works) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+.step-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(57, 255, 20, 0.15);
+}
+.step-num {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1db954 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    color: #000;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+}
+.step-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.step-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Testimonial Cards styling */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+.testimonial-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(57, 255, 20, 0.12);
+}
+
+/* Bottom CTA section */
+.bottom-cta-banner {
+    padding: 60px 40px;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.05) 0%, rgba(57, 255, 20, 0.01) 100%);
+    border: 1px solid rgba(57, 255, 20, 0.15) !important;
+    border-radius: 28px;
+    text-align: center;
+}
+
+/* Scroll Reveal Animations */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+.features .feature-item:nth-child(1), .testimonials-grid .glass-card:nth-child(1) { transition-delay: 0.1s; }
+.features .feature-item:nth-child(2), .testimonials-grid .glass-card:nth-child(2) { transition-delay: 0.2s; }
+.features .feature-item:nth-child(3), .testimonials-grid .glass-card:nth-child(3) { transition-delay: 0.3s; }
+.steps-grid .step-card:nth-child(1) { transition-delay: 0.1s; }
+.steps-grid .step-card:nth-child(2) { transition-delay: 0.2s; }
+.steps-grid .step-card:nth-child(3) { transition-delay: 0.3s; }
 </style>
     
     <!-- SUBSLAYER NEON AESTHETIC OVERRIDES -->
@@ -989,7 +1076,7 @@ body {
             </div>
             
             <section class="features">
-                <div class="feature-item" id="card-scan" style="cursor: pointer;">
+                <div class="feature-item reveal-item" id="card-scan" style="cursor: pointer;">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                         <circle cx="12" cy="13" r="4" />
@@ -997,7 +1084,7 @@ body {
                     <h3>Scan-to-Slay AI</h3>
                     <p>Simply scan a receipt or email. Our on-device AI automatically extracts the service name, price, and billing cycle instantly.</p>
                 </div>
-                <div class="feature-item" id="card-widget" style="cursor: pointer; border-color: rgba(255, 49, 49, 0.15);">
+                <div class="feature-item reveal-item" id="card-widget" style="cursor: pointer; border-color: rgba(255, 49, 49, 0.15);">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3131; filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.4));">
                         <path d="M14.5 17.5L3 6M17.5 14.5L6 3M13 13l7 7M19 17l2 2-2 2-2-2zM5 5L3 3" />
                         <path d="M18 6L6 18" />
@@ -1005,7 +1092,7 @@ body {
                     <h3>One-Tap Slay Widget</h3>
                     <p>Cancel a subscription? Mark it as "Slayed" directly from your iOS Home Screen widget without even opening the app.</p>
                 </div>
-                <div class="feature-item" id="card-privacy" style="cursor: pointer;">
+                <div class="feature-item reveal-item" id="card-privacy" style="cursor: pointer;">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #39FF14; filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));">
                         <path d="M18 10a5 5 0 0 0-9.5-2.5A6 6 0 0 0 2 13a6 6 0 0 0 6 6h10a5 5 0 0 0 0-10z" />
                         <rect x="10" y="12" width="4" height="4" rx="1" />
@@ -1015,6 +1102,113 @@ body {
                 </div>
             </section>
         </main>
+        <!-- How It Works Section -->
+        <section class="how-it-works reveal-item" style="margin: 80px 0 100px; text-align: center; width: 100%;">
+            <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 48px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">3 Steps to Slay Subscriptions</h2>
+            <div class="steps-grid">
+                <div class="step-card reveal-item">
+                    <div class="step-num">1</div>
+                    <h3>Auto-Scan</h3>
+                    <p>Simply scan screenshot receipts or email invoices. On-device intelligence automatically extracts billing info instantly.</p>
+                </div>
+                <div class="step-card reveal-item">
+                    <div class="step-num">2</div>
+                    <h3>Track & Manage</h3>
+                    <p>Track all recurring services in a unified dashboard. Get clear notifications ahead of renewal deadlines.</p>
+                </div>
+                <div class="step-card reveal-item">
+                    <div class="step-num">3</div>
+                    <h3>One-Tap Slay</h3>
+                    <p>Unwanted subscription? Cancel it and mark as "Slayed" from your Home Screen widget. Stop bleeding money.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Testimonials Section -->
+        <section class="testimonials reveal-item" style="margin: 80px 0 100px; width: 100%;">
+            <h2 style="font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 48px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Loved by Savvy Savers</h2>
+            <div class="testimonials-grid">
+                <div class="glass-card testimonial-card reveal-item">
+                    <div style="color: #39FF14; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"SubSlayer saved me over $240 in the first month alone by helping me identify three forgotten cloud subscriptions. The interface is gorgeous!"</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #39FF14, #1db954); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #000;">AM</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Alex M.</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card reveal-item">
+                    <div style="color: #39FF14; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"Finally a finance tool that doesn't ask for my bank login or upload my data to servers. Privacy is solid, and iCloud backup works flawlessly."</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #39FF14, #00d2ff); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #000;">EW</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Emma W.</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Consultant</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card reveal-item">
+                    <div style="color: #39FF14; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"The One-Tap Slay widget is so satisfying. I cancel a trial, tap the widget, and it's out of my dashboard instantly. Extremely clean app!"</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #39FF14, #ffffff); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #000;">TL</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Trung Le</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Software Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQ Section -->
+        <section class="faq reveal-item" style="margin: 60px 0 100px; text-align: left; width: 100%;">
+            <h2 style="font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">Will SubSlayer cancel my subscriptions automatically?</button>
+                    <div class="faq-answer">
+                        <p>No, Apple's iOS ecosystem doesn't allow third-party apps to cancel subscriptions directly for security reasons. SubSlayer provides step-by-step guidance on how to cancel them easily and sends you alerts before free trials end to prevent charges.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is my financial data secure?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. SubSlayer runs 100% offline. Your subscription lists, costs, and reminders are saved locally on your phone and synced securely via Apple iCloud end-to-end encryption. We never collect or track your financial info.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does the Scan-to-Slay AI work?</button>
+                    <div class="faq-answer">
+                        <p>Simply scan a screenshot receipt or email invoice. SubSlayer utilizes a localized Text Recognition engine running on your iPhone's Apple Neural Engine. It processes the image privately on-device in under a second with no server uploads.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is there a subscription fee for SubSlayer?</button>
+                    <div class="faq-answer">
+                        <p>SubSlayer is free to download and use. Free users can track up to 3 active subscriptions with full notification alerts. To track unlimited expenses and access premium home screen widgets, you can unlock lifetime Pro access with a single, one-time lifetime purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Bottom CTA Section -->
+        <section class="bottom-cta reveal-item" style="margin: 80px 0 100px; text-align: center; width: 100%;">
+            <div class="glass-card bottom-cta-banner">
+                <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, #ffffff 50%, #b5b5b5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Ready to Slay Subscriptions?</h2>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 32px; font-size: 16px;">Download SubSlayer now to take full control of your recurring trials and stop bleeding money.</p>
+                <a href="https://apps.apple.com/app/id1234567890" class="app-store-badge">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1600000000" alt="Download on the App Store" decoding="async" style="height: 56px;">
+                </a>
+            </div>
+        </section>
 
         <footer>
             <p>&copy; 2026 TEVIC. All rights reserved.</p>
@@ -1082,6 +1276,37 @@ body {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
+
+        // FAQ Accordion Toggle Action
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+                const answer = item.querySelector('.faq-answer');
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+        // Scroll Reveal Intersection Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        document.querySelectorAll('.reveal-item').forEach(el => {
+            revealObserver.observe(el);
+        });
+        
     </script>
     <div class="bg-glow-bottom"></div>
 </body>
