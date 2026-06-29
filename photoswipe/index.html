@@ -878,6 +878,73 @@ footer {
 body {
     position: relative;
 }
+
+/* Step Cards (How It works) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+.step-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(142, 45, 226, 0.15);
+}
+.step-num {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--purple-start) 0%, var(--purple-end) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(142, 45, 226, 0.4);
+}
+.step-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.step-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Testimonial Cards styling */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+.testimonial-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Bottom CTA section */
+.bottom-cta-banner {
+    padding: 60px 40px;
+    background: linear-gradient(135deg, rgba(142, 45, 226, 0.05) 0%, rgba(74, 0, 224, 0.02) 100%);
+    border: 1px solid rgba(142, 45, 226, 0.15) !important;
+    border-radius: 28px;
+    text-align: center;
+}
 </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -987,6 +1054,28 @@ body {
                 </div>
             </div>
         </main>
+        <!-- How It Works Section -->
+        <section class="how-it-works" style="margin: 80px 0 100px; text-align: center; width: 100%;">
+            <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 48px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">3 Steps to Reclaim Your Space</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Auto-Scan</h3>
+                    <p>PhotoSwipe instantly index-scans your library to find duplicates, blurry photos, and massive videos locally.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Swipe to Sort</h3>
+                    <p>Swipe left to send to review bin, swipe right to keep. Clean hundreds of photos in a couple of minutes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>One-Tap Purge</h3>
+                    <p>Review your deletions and purge them with a single tap to free up gigabytes of local and iCloud storage.</p>
+                </div>
+            </div>
+        </section>
+
 
         <section class="features">
             <div class="glass-card" id="card-swipe" style="cursor: pointer;">
@@ -1016,6 +1105,47 @@ body {
                 </svg>
                 <h3>100% Offline Privacy</h3>
                 <p>Your photos never leave your device. All machine learning and processing happens locally on your iPhone's Neural Engine.</p>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" style="margin: 80px 0 100px; width: 100%;">
+            <h2 style="font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 48px; background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Loved by iPhone Users</h2>
+            <div class="testimonials-grid">
+                <div class="glass-card testimonial-card">
+                    <div style="color: #ffb800; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"I cleared 14GB of useless duplicates and old videos in less than 10 minutes. The Tinder-swipe interface is highly addictive!"</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #8e2de2, #4a00e0); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">MT</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Minh Tuan</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card">
+                    <div style="color: #ffb800; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"Finally, a photo cleaner that works 100% offline. I don't feel comfortable uploading my personal gallery to server APIs. PhotoSwipe is perfect."</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #a855f7, #3b82f6); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">SR</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Sarah R.</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Photographer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card testimonial-card">
+                    <div style="color: #ffb800; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 20px; font-size: 14px; line-height: 1.6;">"Cleaned my screenshots, burst shots, and massive 4K videos smoothly. Highly recommended for anyone with a low capacity iPhone!"</p>
+                    <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">DN</div>
+                        <div>
+                            <h5 style="margin: 0; font-size: 13px; font-weight: 600;">Duc Nguyen</h5>
+                            <span style="font-size: 11px; color: var(--text-secondary);">Software Engineer</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1053,6 +1183,18 @@ body {
                         <p>Only a few seconds. Because PhotoSwipe uses highly optimized native iOS APIs, it scans photo metadata indexes instead of downloading every file. Even massive libraries with 50,000+ photos are processed in seconds with zero battery drain.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+        <!-- Bottom CTA Section -->
+        <section class="bottom-cta" style="margin: 80px 0 100px; text-align: center; width: 100%;">
+            <div class="glass-card bottom-cta-banner">
+                <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, #ffffff 50%, #b5b5b5 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Ready to Clean Your Gallery?</h2>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 32px; font-size: 16px;">Download PhotoSwipe now to automatically group duplicates, filter blurry shots, and free up gigabytes of storage.</p>
+                <a href="https://apps.apple.com/app/id1234567890" class="app-store-badge">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1600000000" alt="Download on the App Store" decoding="async" style="height: 56px;">
+                </a>
             </div>
         </section>
 
