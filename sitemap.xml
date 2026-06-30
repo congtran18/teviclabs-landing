@@ -7,24 +7,24 @@
       <priority>1.0</priority>
    </url>
    
-   <!-- PhotoSwipe -->
+   <!-- SwipeZen -->
    <url>
-      <loc>https://teviclabs.com/photoswipe/</loc>
+      <loc>https://teviclabs.com/swipezen/</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/photoswipe/privacy-policy.html</loc>
+      <loc>https://teviclabs.com/swipezen/privacy-policy.html</loc>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/photoswipe/terms-of-use.html</loc>
+      <loc>https://teviclabs.com/swipezen/terms-of-use.html</loc>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/photoswipe/support.html</loc>
+      <loc>https://teviclabs.com/swipezen/support.html</loc>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
