@@ -14,17 +14,17 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/swipezen/privacy-policy.html</loc>
+      <loc>https://teviclabs.com/swipezen/privacy-policy</loc>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/swipezen/terms-of-use.html</loc>
+      <loc>https://teviclabs.com/swipezen/terms-of-use</loc>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://teviclabs.com/swipezen/support.html</loc>
+      <loc>https://teviclabs.com/swipezen/support</loc>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
@@ -49,5 +49,16 @@
       <loc>https://teviclabs.com/subslayer/support.html</loc>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
+   </url>
+   <!-- PrompterFlow -->
+   <url>
+      <loc>https://teviclabs.com/prompterflow/privacy-policy.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://teviclabs.com/prompterflow/terms-of-use.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
    </url>
 </urlset>
