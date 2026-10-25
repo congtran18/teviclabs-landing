@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrompterFlow - AI Teleprompter &amp; Captions for Video Creators</title>
+    
+    <link rel="canonical" href="https://teviclabs.com/prompterflow/">
+    <meta name="description" content="Speak naturally with 100% eye contact. PrompterFlow is the smart AI teleprompter that follows your voice in real time with auto-scrolling and viral captions.">
+
+    <style>
+        :root {
+            --mint: #00F298;
+            --purple: #8B5CF6;
+            --dark-bg: #090A0F;
+            --card-bg: #13151F;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        header {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span {
+            color: var(--mint);
+        }
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .hero {
+            text-align: center;
+            padding: 70px 0 50px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(0, 242, 152, 0.12);
+            color: var(--mint);
+            border: 1px solid rgba(0, 242, 152, 0.3);
+            border-radius: 99px;
+            padding: 6px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin: 0 0 20px;
+        }
+        .hero p {
+            font-size: 19px;
+            color: #a1a1aa;
+            max-width: 620px;
+            margin: 0 auto 36px;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--mint);
+            color: var(--dark-bg);
+            font-weight: 800;
+            font-size: 17px;
+            padding: 16px 36px;
+            border-radius: 99px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 30px rgba(0, 242, 152, 0.3);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 242, 152, 0.45);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin: 12px 0 8px;
+            color: #fff;
+        }
+        .card p {
+            color: #9ca3af;
+            font-size: 14px;
+            margin: 0;
+        }
+        .icon {
+            font-size: 28px;
+        }
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 32px 0;
+            margin-top: 60px;
+            color: #71717a;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            footer { flex-direction: column; gap: 12px; text-align: center; }
+            footer div { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">Prompter<span>Flow</span></a>
+            <nav>
+                <a href="support.html">Support</a>
+                <a href="terms-of-use.html">Terms</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="badge">On-Device AI Teleprompter</div>
+            <h1>Speak with 100%<br>Eye Contact. No Retakes.</h1>
+            <p>PrompterFlow locks your script directly beside your iPhone camera lens and tracks your voice cadence in real time.</p>
+            <a href="https://apps.apple.com/app/prompterflow" class="cta-btn">
+                <span>Download for iOS</span>
+                <span>→</span>
+            </a>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🎙️</div>
+                <h3>Voice-Follow Speech Tracker</h3>
+                <p>The text scrolls only when you speak. Pause to take a breath or improvise—the script automatically pauses and waits for you.</p>
+            </div>
+            <div class="card">
+                <div class="icon">👁️</div>
+                <h3>100% Direct Eye Contact</h3>
+                <p>Lens-hugging prompter box positioned right below the front lens makes you look straight into your viewer's eyes with zero awkward glancing.</p>
+            </div>
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Instant Viral Auto-Captions</h3>
+                <p>Export ready-to-post TikTok and Reels videos with highlighted dynamic subtitles or download standard SRT files in seconds.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Floating Picture-in-Picture</h3>
+                <p>Record directly on Instagram, TikTok, Zoom, or your camera app with a floating teleprompter window overlaying any application.</p>
+            </div>
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>AI Script Writing Assistant</h3>
+                <p>Turn rough thoughts into punchy 60-second hooks, adjust pacing, and add breath breaks with built-in creative prompts.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🔒</div>
+                <h3>100% On-Device &amp; Private</h3>
+                <p>All video recording, audio recognition, and scripts stay strictly on your device. Zero telemetry, zero cloud uploads.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div>&copy; 2026 TevicLabs. All rights reserved.</div>
+            <div>
+                <a href="support.html">Support</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
