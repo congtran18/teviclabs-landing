@@ -1,0 +1,11 @@
+{
+  "FREE_RECORDING_LIMIT_SECONDS": 60,
+  "DEFAULT_PAYWALL_PLAN": "yearly",
+  "ENABLE_AI_ASSISTANT": true,
+  "SWIPEZEN_APP_STORE_ID": "6785849918",
+  "TERMS_OF_USE_URL": "https://teviclabs.com/prompterflow/terms-of-use",
+  "PRIVACY_POLICY_URL": "https://teviclabs.com/prompterflow/privacy-policy",
+  "SUPPORT_EMAIL": "support@teviclabs.com",
+  "CONFIG_VERSION": "1.0.0",
+  "LAST_UPDATED_UTC": "2026-10-25T17:15:00Z"
+}
