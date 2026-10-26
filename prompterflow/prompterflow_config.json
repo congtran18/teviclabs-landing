@@ -2,10 +2,16 @@
   "FREE_RECORDING_LIMIT_SECONDS": 60,
   "DEFAULT_PAYWALL_PLAN": "yearly",
   "ENABLE_AI_ASSISTANT": true,
-  "SWIPEZEN_APP_STORE_ID": "6785849918",
+  "SWIPEZEN_APP_STORE_ID": "",
   "TERMS_OF_USE_URL": "https://teviclabs.com/prompterflow/terms-of-use",
   "PRIVACY_POLICY_URL": "https://teviclabs.com/prompterflow/privacy-policy",
   "SUPPORT_EMAIL": "support@teviclabs.com",
-  "CONFIG_VERSION": "1.0.0",
-  "LAST_UPDATED_UTC": "2026-10-25T17:15:00Z"
+  "CONFIG_VERSION": "1.1.0",
+  "LAST_UPDATED_UTC": "2026-10-26T15:26:00Z",
+  "ENABLE_FLOATING_PROMPTER": true,
+  "ONBOARDING_SHOWS_TRIAL_STEP": true,
+  "REVIEW_PROMPT_AFTER_SAVES": 2,
+  "PRESET_WPM_SHORT_VIDEO": 170,
+  "PRESET_WPM_LONG_VIDEO": 150,
+  "PRESET_WPM_BUSINESS": 135
 }
